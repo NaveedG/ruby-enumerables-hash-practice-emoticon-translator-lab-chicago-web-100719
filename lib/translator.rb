@@ -6,9 +6,10 @@ def load_library(file_path)
   new_hash[:get_emoticon] = {}
 
   emoticons = YAML.load_file(file_path)
-  emoticons.each do |eng_meanings, emoticon_pairs|
+  emoticons.each do |emoticon|
+    emoticon.each do |eng_meaning, emoticon_pair|
     new_hash[:get_meaning][:japanese] = []
-    new_hash[:get_meaning][:japanese] << emoticon_pairs[1]
+    new_hash[:get_meaning][:japanese] << emoticon_pair[1]
   end
   new_hash
 end
