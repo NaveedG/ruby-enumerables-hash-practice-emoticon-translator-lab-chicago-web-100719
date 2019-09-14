@@ -8,7 +8,7 @@ def load_library(file_path)
     if !new_hash[:get_meaning]
       new_hash[:get_meaning] = { emo_pair[1] => nil }
     else
-      new_hash[:get_meaning][emo_pair[1] => nil ]
+      new_hash[:get_meaning][emo_pair[1]] = nil
     end
 
     if !new_hash[:get_emoticon]
