@@ -4,7 +4,7 @@ def load_library(file_path)
   emoticons = YAML.load_file(file_path)
   emoticons[:get_meaning] = []
   emoticons.each do |meanings, emoticon_pairs|
-    meaning.each do |meaning|
+    meanings.each do |meaning|
       emoticons[:get_meaning] = meaning
     end
   end
