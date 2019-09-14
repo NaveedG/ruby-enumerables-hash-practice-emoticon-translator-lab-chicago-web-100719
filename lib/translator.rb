@@ -11,8 +11,7 @@ def load_library(file_path)
       new_hash[:get_meaning][emo_pair[1]] = nil
     end
 
-    if !new_hash[:get_emoticon]
-    new_hash[:get_emoticon] = {
+    new_hash[:get_emoticon] = {}
   end
   new_hash
 end
