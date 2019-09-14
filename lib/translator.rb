@@ -6,9 +6,9 @@ def load_library(file_path)
   emoticons.each do |eng_meaning, emo_pair|
 
     if !new_hash[:get_meaning]
-      new_hash[:get_meaning] = { emo_pair[1] => nil }
+      new_hash[:get_meaning] = { emo_pair[1] => eng_meaning }
     else
-      new_hash[:get_meaning][emo_pair[1]] = nil
+      new_hash[:get_meaning][emo_pair[1]] = eng_meaning
     end
 
     new_hash[:get_emoticon] = {}
