@@ -5,6 +5,7 @@ def load_library(file_path)
   emoticons[:get_meaning] = {}
   emoticons[:get_emoticon] = []
   emoticons.each do |meaning, emoticon_pair|
+    emoticon[:get_meaning] = meaning
   end
   emoticons
 end
