@@ -3,9 +3,15 @@ require "yaml"
 def load_library(file_path)
   new_hash = {}
   emoticons = YAML.load_file(file_path)
-  emoticons.each do |eng_meaning, emoticon_pair|
-    new_hash[:get_meaning] = { emoticon_pair[1] => eng_meaning } if !new_hash[:get_meaning]
-    new_hash[:get_emoticon] = {} if !new_hash[:get_emoticon]
+  emoticons.each do |eng_meaning, emo_pair|
+    if !new_hash[:get_meaning]
+      new_hash[:get_meaning] = { emo_pair[1] => eng_meaning }
+    else
+      new_hash[:get_meaning][emo_pair[1]] = eng_meaning
+    end
+
+
+    new_hash[:get_emoticon] = {}
   end
   new_hash
 end
