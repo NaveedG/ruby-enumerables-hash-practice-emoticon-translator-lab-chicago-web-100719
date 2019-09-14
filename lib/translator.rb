@@ -3,12 +3,12 @@ require "yaml"
 def load_library(file_path)
   new_hash = {}
   emoticons = YAML.load_file(file_path)
-  emoticons.each do |eng_meaning, emo_pair|
+  emoticons.each do |meaning, emo_pair|
 
     if !new_hash[:get_meaning]
-      new_hash[:get_meaning] = { emo_pair[1] => eng_meaning }
+      new_hash[:get_meaning] = { emo_pair[1] => meaning }
     else
-      new_hash[:get_meaning][emo_pair[1]] = eng_meaning
+      new_hash[:get_meaning][emo_pair[1]] = meaning
     end
 
     if !new_hash[:get_emoticon]
@@ -32,5 +32,5 @@ end
 
 def get_english_meaning(file_path, emoticon)
   emoticons = load_library(file_path)
-  # code goes here
+  if emoticons[:get_meaning]
 end
