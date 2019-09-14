@@ -11,6 +11,7 @@ def load_library(file_path)
     new_hash[:get_meaning][:japanese] = []
     new_hash[:get_meaning][:japanese] << emoticon_pair[1]
   end
+  end
   new_hash
 end
 
