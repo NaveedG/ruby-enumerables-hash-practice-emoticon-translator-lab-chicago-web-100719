@@ -1,12 +1,12 @@
 require "yaml"
 
 def load_library(file_path)
+  new_hash = {}
   emoticons = YAML.load_file(file_path)
-  emoticons[:get_meaning] = []
   emoticons.each do |meanings, emoticon_pairs|
       emoticons[:get_meaning].push(meanings)
   end
-  emoticons
+  new_hash
 end
 
 puts load_library("./lib/emoticons.yml")
